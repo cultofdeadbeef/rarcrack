@@ -1,0 +1,17 @@
+Source: rarcrack
+Section: utils
+Priority: optional
+Maintainer: Cult of Dead Beef <cultofdeadbeef@mail.ru>
+Build-Depends: debhelper (>= 10), libxml2-dev
+Standards-Version: 4.1.2
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: https://anonscm.debian.org/git/collab-maint/rarcrack.git
+#Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/rarcrack.git
+
+Package: rarcrack
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: rarcrack - cracks misc compressed files.
+ This program uses a brute force algorithm to guess your encrypted compressed 
+ file\'s password. If you forget your encrypted file password, this program is 
+ the solution. This program can crack zip,7z and rar file passwords.

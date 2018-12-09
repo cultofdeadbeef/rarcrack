@@ -1,0 +1,41 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ rarcrack (0.2-1) bionic; urgency=medium
+ .
+   * Packaged for ubuntu. Please visit https://sourceforge.net/projects/rarcrack/
+Author: Cult of Dead Beef <cultofdeadbeef@mail.ru>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: 2018-11-27
+
+--- rarcrack-0.2.orig/Makefile
++++ rarcrack-0.2/Makefile
+@@ -7,10 +7,11 @@ all:
+ clean:
+ 	-rm *.o rarcrack
+ install:
+-	install -s rarcrack $(DESTDIR)${PREFIX}/bin
++	install -D rarcrack $(DESTDIR)${PREFIX}/bin/rarcrack
+ 	-mkdir -p $(DESTDIR)${DOCDIR}
+ 	chmod 755 $(DESTDIR)${DOCDIR}
+ 	install -m 644 -t $(DESTDIR)${DOCDIR} CHANGELOG LICENSE README README.html RELEASE_NOTES
+ uninstall:
+-	-rm $(DESTDIR)${PREFIX}/bin/rarcrack
++	-rm -f $(DESTDIR)${PREFIX}/bin/rarcrack
++	rm -rf $(DESTDIR)${DOCDIR}
+ 
